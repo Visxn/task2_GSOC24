@@ -1,5 +1,5 @@
 
-import 'package:flutter/cupertino.dart';
+import   'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -15,10 +15,8 @@ class SettingsScreen extends StatefulWidget {
 }
 
 
-
 class _SettingsScreen extends State<SettingsScreen> {
   bool connectionStatus = false;
-  // TODO 8: Declare SSH Instance
   late SSH ssh;
 
   Future<void> _connectToLG() async {
@@ -178,7 +176,7 @@ class _SettingsScreen extends State<SettingsScreen> {
                 ),
                 onPressed: () async {
                   await _saveSettings();
-                  // TODO 6: Initalize SSH Instance and call connectToLG() function
+
                   SSH ssh = SSH();
                   bool? result = await ssh.connectToLG();
                   if (result == true) {
